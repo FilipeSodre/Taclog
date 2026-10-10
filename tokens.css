@@ -2,7 +2,6 @@
    Branco limpo, UMA cor de destaque (o vermelho da Kodiak vira o azul do logo), títulos grandes em peso
    normal e caixa-baixa com tracking negativo, foto real grande em toda seção, filetes pretos de 1px,
    cantos retos. Sem mono, sem colchetes, sem fundo escuro de "tech". v1 guardada em v1/. */
-@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap");
 :root{
   --sans:"General Sans","Helvetica Neue",Arial,sans-serif;   /* ≈ fonte da Kodiak: geométrica, 'a' de dois andares */
   /* escala — medida na âncora: h1 86px/-4.3px, h2 50px/-1px, corpo 16px; aqui corpo 17px */
