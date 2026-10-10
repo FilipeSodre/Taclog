@@ -1,15 +1,15 @@
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Carregamento inicial: some quando a página carrega (no máximo 2,5 s)
-// contador 0→100 que acompanha o carregamento; mínimo 1,6 s para a animação respirar
+// Carregamento inicial: some quando a página carrega (no máximo 1,5 s)
+// contador 0→100 que acompanha o carregamento; mínimo 0,3 s (antes 1,6 s, segurava o LCP)
 const ld = document.querySelector(".loader"), ldN = ld.querySelector(".loader__n");
 let n = 0, loaded = false, t0 = performance.now();
 const ready = () => document.body.classList.remove("is-loading");
 addEventListener("load", () => (loaded = true));
-setTimeout(() => (loaded = true), 3500);
+setTimeout(() => (loaded = true), 1500);
 (function tick() {
-  const alvo = loaded && performance.now() - t0 > 1600 ? 100 : Math.min(90, (performance.now() - t0) / 20);
+  const alvo = loaded && performance.now() - t0 > 300 ? 100 : Math.min(90, (performance.now() - t0) / 20);
   n += (alvo - n) * 0.12;
   if (alvo === 100 && n > 99.5) n = 100;
   ldN.textContent = Math.round(n);
@@ -19,6 +19,8 @@ setTimeout(() => (loaded = true), 3500);
 
 // Hero: a mídia sai da coluna e se estica até a borda conforme rola
 const heroImg = document.querySelector(".hero__img");
+// vídeo sem autoplay/preload no HTML para não disputar banda com a imagem LCP; começa depois do load
+addEventListener("load", () => heroImg.querySelector("video").play().catch(() => {}));
 const stretch = () => {
   const p = reduce ? 1 : Math.min(1, Math.max(0, 1 - heroImg.getBoundingClientRect().top / (innerHeight * 0.6)));
   heroImg.style.setProperty("--p", p.toFixed(3));
