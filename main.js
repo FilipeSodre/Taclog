@@ -68,6 +68,13 @@ $$(".rise").forEach((el) => io.observe(el));
 const header = document.querySelector(".top");
 addEventListener("scroll", () => header.classList.toggle("is-scrolled", scrollY > 40), { passive: true });
 
+// Menu do celular: abre/fecha no botão, fecha ao escolher um link ou com Esc
+const menuBt = header.querySelector(".menu");
+const setMenu = (open) => { header.classList.toggle("menu-open", open); menuBt.setAttribute("aria-expanded", open); menuBt.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu"); };
+menuBt.addEventListener("click", () => setMenu(!header.classList.contains("menu-open")));
+header.querySelectorAll("nav a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+addEventListener("keydown", (e) => { if (e.key === "Escape" && header.classList.contains("menu-open")) { setMenu(false); menuBt.focus(); } });
+
 // Formulário (web3forms) sem sair da página
 const form = document.querySelector(".form");
 form.addEventListener("submit", async (e) => {

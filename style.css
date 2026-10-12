@@ -45,6 +45,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 .top nav a{text-decoration:none;font-size:var(--fs-sm)}
 .top nav a{opacity:.85;transition:opacity var(--dur)}
 .top nav a:hover{opacity:1}
+.menu{display:none;width:44px;height:44px;place-items:center;background:none;border:0;color:inherit;cursor:pointer}
+.menu svg{width:22px;height:22px}
 
 /* hero: foto de fundo com o título por cima; o vídeo vem logo abaixo e se estica */
 .hero__top{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--white);overflow:hidden}
@@ -193,8 +195,11 @@ details[open] .acc__ico::after{transform:rotate(0)}
 .rise.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .top nav{display:none}
-  .top__row{grid-template-columns:1fr auto}
+  .top__row{grid-template-columns:1fr auto auto;gap:var(--s2);position:relative}
+  .menu{display:grid;order:1}
+  .top nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--white);color:var(--ink);box-shadow:0 8px 24px rgba(14,14,14,.12)}
+  .top.menu-open nav{display:flex}
+  .top nav a{padding:14px var(--gutter);border-top:1px solid rgba(14,14,14,.08);font-size:var(--fs-base);opacity:1}
   .screen{border-right:0;border-bottom:var(--rule)}
   .top .btn--sm{margin-left:auto}
   .head,.how__grid,.product__grid,.contact__grid{grid-template-columns:1fr}
