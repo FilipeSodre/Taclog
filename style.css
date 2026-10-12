@@ -229,5 +229,6 @@ details[open] .acc__ico::after{transform:rotate(0)}
   .notice a{display:none}
   .top .btn--sm{padding:10px 12px;white-space:nowrap}
   .top .btn--sm .arw{display:none}
+  .top .btn--sm .long{display:none}
   .hero__copy{padding-top:160px}
 }
