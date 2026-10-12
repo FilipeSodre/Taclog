@@ -223,6 +223,8 @@ details[open] .acc__ico::after{transform:rotate(0)}
   .map__tabs{position:static;width:auto;border:0;border-bottom:var(--rule)}
   .notice{font-size:13px}
   .cycle__row p,.stats__row span{font-size:14px}
+  .stats__row li{padding-inline:var(--s2)}
+  .stats__row strong{font-size:28px}
   .notice a{display:none}
   .top .btn--sm{padding:10px 12px;white-space:nowrap}
   .top .btn--sm .arw{display:none}
