@@ -224,4 +224,7 @@ details[open] .acc__ico::after{transform:rotate(0)}
   .notice{font-size:13px}
   .cycle__row p,.stats__row span{font-size:14px}
   .notice a{display:none}
+  .top .btn--sm{padding:10px 12px;white-space:nowrap}
+  .top .btn--sm .arw{display:none}
+  .hero__copy{padding-top:160px}
 }
