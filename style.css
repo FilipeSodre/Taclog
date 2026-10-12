@@ -184,6 +184,7 @@ details[open] .acc__ico::after{transform:rotate(0)}
 .foot h3{font-size:13px;color:#7F8A96;margin-bottom:var(--s2);text-transform:none;letter-spacing:.02em}
 .foot li+li{margin-top:10px}
 .foot a{text-decoration:none}
+.foot ul a{display:inline-block;padding-block:12px}
 .foot ul a:hover,.foot__up:hover{color:var(--logo)}
 .foot__bottom{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s2) var(--s4);align-items:center;padding-top:var(--s4);color:#AEB6BF}
 .foot__bottom .brand{color:var(--white);font-size:18px}
