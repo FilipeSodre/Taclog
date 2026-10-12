@@ -45,6 +45,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 .top nav a{text-decoration:none;font-size:var(--fs-sm)}
 .top nav a{opacity:.85;transition:opacity var(--dur)}
 .top nav a:hover{opacity:1}
+.menu{display:none;width:44px;height:44px;place-items:center;background:none;border:0;color:inherit;cursor:pointer}
+.menu svg{width:22px;height:22px}
 
 /* hero: foto de fundo com o título por cima; o vídeo vem logo abaixo e se estica */
 .hero__top{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--white);overflow:hidden}
@@ -182,6 +184,7 @@ details[open] .acc__ico::after{transform:rotate(0)}
 .foot h3{font-size:13px;color:#7F8A96;margin-bottom:var(--s2);text-transform:none;letter-spacing:.02em}
 .foot li+li{margin-top:10px}
 .foot a{text-decoration:none}
+.foot ul a{display:inline-block;padding-block:12px}
 .foot ul a:hover,.foot__up:hover{color:var(--logo)}
 .foot__bottom{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s2) var(--s4);align-items:center;padding-top:var(--s4);color:#AEB6BF}
 .foot__bottom .brand{color:var(--white);font-size:18px}
@@ -193,8 +196,11 @@ details[open] .acc__ico::after{transform:rotate(0)}
 .rise.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .top nav{display:none}
-  .top__row{grid-template-columns:1fr auto}
+  .top__row{grid-template-columns:1fr auto auto;gap:var(--s2);position:relative}
+  .menu{display:grid;order:1}
+  .top nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--white);color:var(--ink);box-shadow:0 8px 24px rgba(14,14,14,.12)}
+  .top.menu-open nav{display:flex}
+  .top nav a{padding:14px var(--gutter);border-top:1px solid rgba(14,14,14,.08);font-size:var(--fs-base);opacity:1}
   .screen{border-right:0;border-bottom:var(--rule)}
   .top .btn--sm{margin-left:auto}
   .head,.how__grid,.product__grid,.contact__grid{grid-template-columns:1fr}
@@ -218,5 +224,10 @@ details[open] .acc__ico::after{transform:rotate(0)}
   .map__tabs{position:static;width:auto;border:0;border-bottom:var(--rule)}
   .notice{font-size:13px}
   .cycle__row p,.stats__row span{font-size:14px}
+  .stats__row li{padding-inline:var(--s2)}
+  .stats__row strong{font-size:28px}
   .notice a{display:none}
+  .top .btn--sm{padding:10px 12px;white-space:nowrap}
+  .top .btn--sm .arw{display:none}
+  .hero__copy{padding-top:160px}
 }
