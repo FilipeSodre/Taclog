@@ -102,7 +102,6 @@ details[open] .acc__ico::after{transform:rotate(0)}
 .acc__body{padding:0 0 var(--s4);display:grid;gap:var(--s2)}
 .acc__body h3{font-size:var(--fs-lg)}
 .acc__body p{color:var(--ink-2)}
-.
 .acc__body li{padding-left:22px;position:relative}
 .acc__body li::before{content:"";position:absolute;left:0;top:.7em;width:12px;height:1px;background:var(--ink)}
 .how__media{position:sticky;top:110px;display:grid;aspect-ratio:4/5;overflow:hidden;background:var(--paper)}
